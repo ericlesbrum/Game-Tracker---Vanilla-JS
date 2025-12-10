@@ -1,0 +1,198 @@
+/* assets/css/_layout.css - Layout da MPA */
+body {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 250px;
+  background-color: var(--color-card);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  color: var(--color-secondary);
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li a {
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: var(--color-text);
+  border-radius: var(--radius-default);
+  transition: background-color 0.2s;
+}
+
+.sidebar-nav li a:hover {
+  background-color: var(--color-surface);
+}
+
+.sidebar-nav li.active a {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  font-weight: bold;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex-grow: 1;
+  padding: var(--spacing-md);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-surface);
+}
+
+.header h1 {
+  color: var(--color-text);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.feature-list {
+  margin-top: 15px;
+  padding-left: 20px;
+  list-style-type: "⚡ ";
+}
+
+.feature-list li {
+  margin-bottom: 5px;
+}
+
+/* Layout específico para Game Tracker */
+.io-controls {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.tabs-container {
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--color-surface);
+}
+
+.tab-content {
+  background-color: var(--color-card);
+  padding: 20px;
+  border-radius: var(--radius-default);
+}
+
+/* Layout específico para Processor */
+.config-area {
+  background-color: var(--color-card);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-default);
+  margin-bottom: var(--spacing-md);
+}
+
+.config-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.config-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-subtle);
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.results-area {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--color-card);
+  border-radius: var(--radius-default);
+}
+
+.results-header {
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.name-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--color-surface);
+  border-radius: var(--radius-default);
+  background-color: var(--color-surface);
+}
+
+.name-list li {
+  padding: 8px 15px;
+  border-bottom: 1px solid var(--color-card);
+  font-size: 0.95rem;
+}
+
+.name-list li:last-child {
+  border-bottom: none;
+}
+
+.controls {
+  margin-bottom: 15px;
+}
+
+.feedback-message {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid var(--color-surface);
+  background-color: var(--color-card);
+  border-radius: var(--radius-default);
+  color: var(--color-text-subtle);
+}
+
+/* Responsividade da Sidebar */
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidebar h2 {
+    display: none;
+  }
+
+  .sidebar-nav ul {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 5px;
+    justify-content: space-around;
+    gap: 5px;
+  }
+
+  .sidebar-nav li {
+    flex-shrink: 0;
+  }
+
+  .sidebar-nav li a {
+    padding: 8px 12px;
+    text-align: center;
+  }
+}

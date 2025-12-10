@@ -1,0 +1,137 @@
+/* assets/css/_buttons.css - Botões e Abas */
+
+/* BOTÕES GERAIS */
+.primary-btn,
+.secondary-btn,
+.danger-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+}
+
+.primary-btn {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.primary-btn:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.secondary-btn {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-text-subtle);
+}
+
+.secondary-btn:hover {
+  background-color: var(--color-card);
+  border-color: var(--color-primary);
+}
+
+.danger-btn {
+  background-color: var(--color-danger);
+  color: var(--color-background);
+}
+
+.danger-btn:hover {
+  background-color: var(--color-danger-dark);
+}
+
+.primary-btn.copied {
+  background-color: #22c55e; /* Green 500 */
+}
+
+/* COMPONENTE TAB BUTTON */
+.tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: visible;
+  gap: 5px;
+  padding-bottom: 5px;
+  white-space: normal;
+}
+
+.tab-button {
+  background-color: var(--color-surface);
+  color: var(--color-text-subtle);
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--radius-default) var(--radius-default) 0 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 1;
+  min-width: 100px;
+  position: relative;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-button:hover {
+  background-color: var(--color-card);
+  color: var(--color-text);
+}
+
+.tab-button.active {
+  background-color: var(--color-card);
+  color: var(--color-primary);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.tab-add-btn {
+  background-color: transparent;
+  border: 1px dashed var(--color-text-subtle);
+  color: var(--color-text-subtle);
+  padding: 5px 10px;
+  border-radius: var(--radius-default);
+  margin-left: 10px;
+  transition: all 0.2s;
+}
+
+.tab-add-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-color: var(--color-primary);
+}
+
+/* ÍCONES E BOTÕES DE ÍCONE */
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.delete-icon {
+  color: var(--color-danger);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.delete-icon:hover {
+  color: var(--color-danger-dark);
+}

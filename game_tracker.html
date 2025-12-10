@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Meus Jogos (Tracker)</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h2>Projeto Vanilla JS</h2>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="processor.html">✂️ Processador de Arquivos</a></li>
+                <li class="active"><a href="game_tracker.html">🎮 Meus Jogos (Tracker)</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <div class="container">
+            <header class="header">
+                <h1>Acompanhamento de Jogos Multi-Aba (Vanilla JS)</h1>
+                <p>Gerencie suas listas de jogos. Renomear: Duplo clique na aba. Excluir: Clique no 'x' da aba.</p>
+                <p style="color: var(--color-primary); font-size: 0.9em;">* Importação e Exportação utilizam formato
+                    JSON, permitindo backup e migração entre dispositivos.</p>
+
+                <div class="io-controls">
+                    <button id="export-json-btn" class="secondary-btn">💾 Exportar JSON</button>
+                    <button id="import-json-btn" class="primary-btn">📁 Importar JSON</button>
+                    <input type="file" id="import-json-input" accept=".json" style="display: none;">
+                </div>
+            </header>
+
+            <div class="tabs-container">
+                <div id="tab-list" class="tab-list">
+                </div>
+            </div>
+
+            <div id="tab-content" class="tab-content">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-container">
+        <div id="rename-modal" class="modal">
+            <div class="modal-content">
+                <h2>Renomear Aba</h2>
+                <input type="text" id="rename-input" placeholder="Novo nome da aba" class="text-input" maxlength="30">
+                <div class="modal-actions">
+                    <button id="cancel-rename-btn" class="secondary-btn">Cancelar</button>
+                    <button id="confirm-rename-btn" class="primary-btn">Confirmar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="delete-modal" class="modal">
+            <div class="modal-content">
+                <h2>Confirmar Exclusão</h2>
+                <p>Tem certeza de que deseja excluir a aba: "<span id="delete-tab-name"></span>"?</p>
+                <p style="color: var(--color-danger); font-size: 0.9em;">Atenção: Pelo menos uma aba deve permanecer.
+                </p>
+                <div class="modal-actions">
+                    <button id="cancel-delete-btn" class="secondary-btn">Cancelar</button>
+                    <button id="confirm-delete-btn" class="danger-btn">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/domains/game_tracker.js"></script>
+</body>
+
+</html>

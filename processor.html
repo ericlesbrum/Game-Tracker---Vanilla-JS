@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✂️ Processador de Nomes de Arquivos</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h2>Projeto Vanilla JS</h2>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li class="active"><a href="processor.html">✂️ Processador de Arquivos</a></li>
+                <li><a href="game_tracker.html">🎮 Meus Jogos (Tracker)</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <div class="container">
+            <header class="header">
+                <h1>Processador de Nomes de Arquivos</h1>
+                <p>Ferramenta para limpar e dedupicar nomes de arquivos de uma pasta selecionada.</p>
+            </header>
+
+            <input type="file" id="folder-picker" webkitdirectory directory multiple style="display: none;">
+
+            <div class="config-area">
+                <label for="ignore-folder-input" class="config-label">
+                    📂 **Pastas a Ignorar (Opcional):**
+                </label>
+                <input type="text" id="ignore-folder-input" placeholder="Ex: DLC, Bônus, Extras" value=""
+                    class="text-input">
+                <p class="config-hint">Arquivos dentro de subpastas com estes nomes serão **ignorados**. Use **vírgulas
+                    (,)** para separar múltiplos nomes.</p>
+            </div>
+
+            <button id="load-folder-btn" class="primary-btn" aria-label="Carregar Pasta">
+                <span class="icon">➕</span> 1. Selecionar e Processar Pasta
+            </button>
+
+            <section id="results-area" class="results-area hidden">
+                <h2 class="results-header">✅ Nomes Processados: (<span id="file-count">0</span>)</h2>
+
+                <div class="controls">
+                    <button id="copy-btn" class="secondary-btn"
+                        title="Copiar todos os nomes para a área de transferência">
+                        <span class="icon">📋</span> 2. Copiar Lista
+                    </button>
+                </div>
+
+                <ul id="name-list" class="name-list">
+                </ul>
+            </section>
+
+            <p id="feedback-message" class="feedback-message" aria-live="polite">Clique em "Selecionar e Processar
+                Pasta" para começar.</p>
+
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/domains/processor.js"></script>
+</body>
+
+</html>

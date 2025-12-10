@@ -1,0 +1,119 @@
+/* assets/css/_base.css - Variáveis Globais, Reset, Tipografia e Modais */
+:root {
+  /* Cores (PALETA DARK SPACE) */
+  --color-primary: #8b5cf6; /* Violeta Vibrante */
+  --color-primary-dark: #6d28d9;
+  --color-secondary: #f59e0b; /* Âmbar Vibrante */
+
+  --color-background: #0a0e14; /* Fundo escuro profundo */
+  --color-surface: #131924; /* Superfícies principais (Container) */
+  --color-card: #1f2937; /* Elementos internos (Sidebar, Cartões, Abas Ativas, Tab Content) */
+
+  --color-text: #e5e7eb;
+  --color-text-subtle: #9ca3af;
+  --color-danger: #ef4444;
+  --color-danger-dark: #b91c1c;
+
+  /* Tamanhos e Bordas */
+  --radius-default: 8px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Estilos de Inputs e Seletores */
+.text-input,
+.select-input {
+  width: 100%;
+  padding: 10px 15px;
+  margin: 5px 0 15px 0;
+  display: inline-block;
+  border: 1px solid var(--color-surface);
+  border-radius: var(--radius-default);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.text-input:focus,
+.select-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5);
+  outline: none;
+  background-color: var(--color-card);
+}
+
+/* ------------------------------------- */
+/* COMPONENTE MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.modal-content {
+  background-color: var(--color-card);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 450px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease-out;
+}
+
+.modal-content h2 {
+  color: var(--color-primary);
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

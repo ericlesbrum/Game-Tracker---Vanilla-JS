@@ -1,0 +1,325 @@
+# ============================================
+# .gitignore - Projeto Vanilla JS
+# ============================================
+
+# ============================================
+# 1. Sistema Operacional
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================
+# 2. IDEs e Editores
+# ============================================
+
+# Visual Studio Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.vsix
+
+# JetBrains IDEs (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.idea_modules/
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+*~
+tags
+[._]*.un~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ============================================
+# 3. Node.js (caso adicione ferramentas)
+# ============================================
+
+# Dependencies
+node_modules/
+jspm_packages/
+bower_components/
+
+# npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Package managers
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Optional npm cache
+.npm
+.eslintcache
+.stylelintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# ============================================
+# 4. Build e Dist (caso adicione build)
+# ============================================
+
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
+
+# ============================================
+# 5. Logs
+# ============================================
+
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ============================================
+# 6. Testes e Coverage
+# ============================================
+
+coverage/
+*.lcov
+.nyc_output
+lib-cov
+.grunt
+.lock-wscript
+test-results/
+*.spec.js.snap
+
+# ============================================
+# 7. Ambiente e Configuração
+# ============================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Configuration files
+config.local.js
+config.local.json
+secrets.json
+
+# ============================================
+# 8. Arquivos Temporários
+# ============================================
+
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.backup
+*~
+
+# ============================================
+# 9. Dados de Usuário (não commitamos dados pessoais)
+# ============================================
+
+# LocalStorage exports (dados pessoais do usuário)
+game_tracker_data.json
+*.backup.json
+user_data/
+exports/
+
+# ============================================
+# 10. Arquivos Grandes ou Binários
+# ============================================
+
+# Imagens grandes (se adicionadas)
+*.psd
+*.ai
+*.sketch
+
+# Vídeos
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Arquivos compactados grandes
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# ============================================
+# 11. Dependências Opcionais
+# ============================================
+
+# TypeScript (caso migre)
+*.tsbuildinfo
+
+# ESLint
+.eslintcache
+
+# Prettier
+.prettiercache
+
+# ============================================
+# 12. Documentação Gerada
+# ============================================
+
+# JSDoc output
+docs/jsdoc/
+docs/api/
+
+# ============================================
+# 13. Deploy e CI/CD
+# ============================================
+
+# Vercel
+.vercel
+
+# Netlify
+.netlify
+
+# GitHub Actions
+.github/workflows/*.log
+
+# ============================================
+# 14. Arquivos Específicos do Projeto
+# ============================================
+
+# Arquivos de teste de processamento
+test_files/
+sample_data/
+
+# Backups manuais
+backup_*.json
+old_version/
+
+# Screenshots e demos (caso sejam muito grandes)
+# screenshots/*.png (descomentar se necessário)
+
+# ============================================
+# Exceções (arquivos que DEVEM ser commitados)
+# ============================================
+
+# Manter arquivos de configuração importantes
+!.gitkeep
+!.editorconfig
+!.prettierrc
+!.eslintrc.js
+
+# ============================================
+# Notas de Desenvolvimento
+# ============================================
+
+# Arquivos pessoais de notas
+NOTES.md
+TODO.personal.md
+SCRATCH.md
+notes/
+
+# Pasta JSON com todos os arquivos dentro
+json/
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!jsconfig.json
