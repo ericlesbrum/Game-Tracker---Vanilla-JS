@@ -20,7 +20,6 @@ export const GameStatus = [
   "Jogando",
   "Pausado",
   "Zerado",
-  "Abandonado",
 ];
 
 // 2. Notas (0 a 10)
