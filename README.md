@@ -375,10 +375,8 @@ O projeto é totalmente responsivo com breakpoints:
 
 ### Curto Prazo
 
-- [ ] Ordenação de colunas na tabela
+- ✅ Ordenação de colunas na tabela
 - [ ] Busca/filtro de jogos
-- [ ] Temas customizáveis (claro/escuro)
-- [ ] Atalhos de teclado
 
 ### Médio Prazo
 
