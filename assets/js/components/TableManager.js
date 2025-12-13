@@ -69,6 +69,7 @@ export class TableManager {
 
     this.currentPage = 1;
     this.activeTab = null;
+    this.searchTerm = "";
 
     // Estado de ordenação
     this.sortConfig = {
@@ -211,6 +212,20 @@ export class TableManager {
   }
 
   /**
+   * Filtra os jogos com base no termo de pesquisa atual (this.searchTerm).
+   * @param {Array} games - Array de jogos a serem filtrados
+   * @returns {Array} Array filtrado
+   */
+  filterGames(games) {
+    if (!this.searchTerm) return games;
+
+    const term = this.searchTerm.toLowerCase();
+    return games.filter((game) =>
+      (game.title || "").toLowerCase().includes(term)
+    );
+  }
+
+  /**
    * Renderiza a tabela principal, os botões de ação e a paginação.
    */
   render() {
@@ -219,17 +234,51 @@ export class TableManager {
 
     if (!tab) return;
 
+    // Filtra os jogos de acordo com o que é pesquisado
+    const filteredGames = this.filterGames(tab.games);
+
     // Ordena os jogos antes de paginar
-    const sortedGames = this.sortGames(tab.games);
+    const sortedGames = this.sortGames(filteredGames);
 
     const totalPages = Math.ceil(sortedGames.length / ROWS_PER_PAGE);
+    // Se a página atual estiver fora do limite após a filtragem/ordenação, volta para a primeira
+    if (this.currentPage > totalPages) {
+      this.currentPage = 1;
+    }
+
     const startIndex = (this.currentPage - 1) * ROWS_PER_PAGE;
     const endIndex = startIndex + ROWS_PER_PAGE;
     const gamesToDisplay = sortedGames.slice(startIndex, endIndex);
 
-    // Estrutura da Tabela
+    // Estrutura da Tabela e pesquisa
     const tableContainer = document.createElement("div");
     tableContainer.className = "data-table-container";
+    const searchContainer = document.createElement("div");
+    const searchInput = document.createElement("input");
+
+    searchContainer.setAttribute("class", "search-container");
+
+    searchInput.setAttribute("type", "text");
+    searchInput.setAttribute("id", "search");
+    searchInput.setAttribute("name", "search");
+    searchInput.setAttribute("class", "search-input");
+    searchInput.setAttribute("placeholder", "Ex: Final Fantasy");
+    searchInput.value = this.searchTerm;
+
+    searchInput.addEventListener("input", () => {
+      const newSearchTerm = searchInput.value.trim();
+      // Re-renderiza somente se o termo mudou para evitar chamadas desnecessárias
+      if (this.searchTerm !== newSearchTerm) {
+        this.searchTerm = newSearchTerm;
+        // Redefine a página para a primeira ao pesquisar
+        this.currentPage = 1;
+        this.render();
+      }
+    });
+
+    searchContainer.appendChild(searchInput);
+    tableContainer.appendChild(searchContainer);
+
     const table = document.createElement("table");
     table.className = "data-table";
 
@@ -333,6 +382,10 @@ export class TableManager {
     // Renderiza Controles de Paginação (se houver mais de uma página)
     if (totalPages > 1) {
       this.renderPagination(totalPages, sortedGames.length);
+    }
+
+    if (document.activeElement !== searchInput) {
+      searchInput.focus();
     }
   }
 

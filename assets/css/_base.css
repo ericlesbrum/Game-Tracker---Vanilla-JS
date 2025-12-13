@@ -36,8 +36,20 @@ body {
 
 /* Estilos de Inputs e Seletores */
 .text-input,
-.select-input {
+.select-input,
+.search-input {
   width: 100%;
+}
+
+.search-container {
+  max-width: 400px;
+  padding: 10px 0;
+  margin-left: 0;
+}
+
+.text-input,
+.select-input,
+.search-input {
   padding: 10px 15px;
   margin: 5px 0 15px 0;
   display: inline-block;
@@ -50,7 +62,8 @@ body {
 }
 
 .text-input:focus,
-.select-input:focus {
+.select-input:focus,
+.search-input:focus {
   border-color: var(--color-primary);
   box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.5);
   outline: none;
@@ -96,6 +109,13 @@ body {
   justify-content: flex-end;
   gap: 10px;
   margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .search-input {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
 }
 
 @keyframes fadeIn {

@@ -244,7 +244,7 @@ Abra o arquivo `index.html` diretamente no navegador (pode ter limitações com 
 
 1. **Criar Nova Aba**
 
-   - Clique em "➕ Nova Lista"
+   - Clique em "➕ Nova Aba"
    - A aba será criada com nome padrão
 
 2. **Renomear Aba**
@@ -376,7 +376,7 @@ O projeto é totalmente responsivo com breakpoints:
 ### Curto Prazo
 
 - [x] Ordenação de colunas na tabela
-- [ ] Busca/filtro de jogos
+- [x] Busca/filtro de jogos
 
 ### Médio Prazo
 

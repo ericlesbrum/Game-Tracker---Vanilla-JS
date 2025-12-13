@@ -98,7 +98,7 @@ export class TabManager {
     const addTabButton = document.createElement("button");
     addTabButton.className = "tab-button tab-add-btn";
     addTabButton.title = "Adicionar Nova Aba";
-    addTabButton.innerHTML = '<span class="icon">➕ Nova Lista</span>';
+    addTabButton.innerHTML = '<span class="icon">➕ Nova Aba</span>';
     addTabButton.onclick = () => this.addTab(); // Chama o callback do Controller
     this.domList.appendChild(addTabButton);
   }
