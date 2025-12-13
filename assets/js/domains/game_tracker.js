@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addTab: () => {
       const newTab = {
         id: Date.now().toString(),
-        name: `Nova Lista ${tabsData.length + 1}`,
+        name: `Nova Aba ${tabsData.length + 1}`,
         games: [], // Jogos inicializados vazios
       };
       tabsData.push(newTab);
